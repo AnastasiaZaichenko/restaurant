@@ -4,7 +4,7 @@ export const SET_TABLE_LIST = "SET_TABLE_DISH";
 export const CREATE_TABLE = "CREATE_TABLE";
 export const CLEAR_TABLE_FORM = "CLEAR_TABLE_FORM";
 export const DELETE_TABLE = "DELETE_TABLE";
-export const ACTION_CREATE_EDIT_TABLE = "ACTION_CREATE_EDIT_TABLE";
+export const CREATE_EDIT_TABLE = "ACTION_CREATE_EDIT_TABLE";
 export const UPDATE_TABLE = "UPDATE_TABLE";
 
 export function fetchTableList() {
@@ -64,5 +64,5 @@ export function remove(table) {
 }
 
 export function setEditTable(table) {
-  return { type: ACTION_CREATE_EDIT_TABLE, payload: table };
+  return { type: CREATE_EDIT_TABLE, payload: table };
 }

@@ -3,7 +3,7 @@ import {
   CREATE_TABLE,
   CLEAR_TABLE_FORM,
   DELETE_TABLE,
-  ACTION_CREATE_EDIT_TABLE,
+  CREATE_EDIT_TABLE,
   UPDATE_TABLE,
 } from "../actions/tableActions";
 
@@ -32,7 +32,7 @@ export default function tableReducer(state = initialState, { type, payload }) {
     case DELETE_TABLE:
       const newList = state.list.filter((table) => table.id !== payload.id);
       return { ...state, list: newList };
-    case ACTION_CREATE_EDIT_TABLE: {
+    case CREATE_EDIT_TABLE: {
       return { ...state, tableEdit: payload };
     }
     case UPDATE_TABLE: {
