@@ -1,12 +1,15 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { clearForm, save } from "../../store/actions/tableActions";
 import { selectTableEdit } from "../../store/selectors";
+// import { useForm } from "react-hook-form";
 
 export default function TableForm() {
   const tableEdit = useSelector(selectTableEdit);
   const [value, setValue] = useState("");
 
+  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -27,8 +30,6 @@ export default function TableForm() {
 
       setValue("");
     }
-
-    // нужно setValue  i clearForm оба?
   }
 
   function onValueChange(e) {
@@ -37,6 +38,10 @@ export default function TableForm() {
       setValue(tableNumber);
     }
     return;
+  }
+
+  function goBackBtn() {
+    navigate("/table");
   }
 
   return (
@@ -53,6 +58,7 @@ export default function TableForm() {
       <button type="submit" onClick={onAddBtnClick}>
         Создать{" "}
       </button>
+      <button onClick={goBackBtn}>Назад</button>
     </form>
   );
 }
