@@ -3,9 +3,9 @@ export default function OrderItems({ order }) {
   function onDeleteBtnClick() {}
   return (
     <li>
-      <span>{order.table.number}</span>
+      {/* <span>{order.table.numbe}</span>
 
-      <span>{order.waiter.firstName}</span>
+      <span>{order.waiter.firstName}</span> */}
 
       <span>счет</span>
 

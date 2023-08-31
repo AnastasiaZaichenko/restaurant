@@ -1,43 +1,29 @@
-import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { clearForm, save } from "../../store/actions/tableActions";
+import { save } from "../../store/actions/tableActions";
 import { selectTableEdit } from "../../store/selectors";
-// import { useForm } from "react-hook-form";
+import { Formik } from "formik";
+import { DEFAULT_TABLE } from "../../store/reducers/tableReducer";
+import { validationSchemaTable } from "../../extra/form-rules/tableRules";
 
 export default function TableForm() {
   const tableEdit = useSelector(selectTableEdit);
-  const [value, setValue] = useState("");
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    if (tableEdit?.id) {
-      setValue(tableEdit.number);
-    }
-  }, [tableEdit.number, tableEdit?.id]);
+  function onSubmit(value, actions) {
+    const table = {
+      ...tableEdit,
+      number: Number(value.number),
+    };
 
-  function onAddBtnClick(e) {
-    e.preventDefault();
-    if (value) {
-      const table = {
-        ...tableEdit,
-        number: value,
-      };
-      dispatch(save(table));
-      dispatch(clearForm());
+    actions.resetForm({
+      values: DEFAULT_TABLE,
+    });
 
-      setValue("");
-    }
-  }
-
-  function onValueChange(e) {
-    const tableNumber = e.target.value;
-    if (!isNaN(Number(tableNumber))) {
-      setValue(tableNumber);
-    }
-    return;
+    dispatch(save(table));
+    navigate("/table");
   }
 
   function goBackBtn() {
@@ -45,20 +31,29 @@ export default function TableForm() {
   }
 
   return (
-    <form>
-      <label htmlFor="tableNumber">
-        Чтобы создать новый стол введите цифру
-      </label>
-      <input
-        type="text"
-        id="tableNumber"
-        value={value}
-        onChange={onValueChange}
-      />
-      <button type="submit" onClick={onAddBtnClick}>
-        Создать{" "}
-      </button>
-      <button onClick={goBackBtn}>Назад</button>
-    </form>
+    <Formik
+      enableReinitialize
+      initialValues={tableEdit}
+      validationSchema={validationSchemaTable}
+      onSubmit={onSubmit}
+    >
+      {({ values, handleSubmit, handleChange, errors, touched }) => (
+        <form onSubmit={handleSubmit}>
+          <label htmlFor="number">Put table`s number</label>
+          <input
+            value={values.number}
+            type="text"
+            id="number"
+            onChange={handleChange}
+          />
+          {errors.number && touched.number ? (
+            <span>{errors.number}</span>
+          ) : null}
+
+          <button type="submit">Add a table</button>
+          <button onClick={goBackBtn}>Back to previous page</button>
+        </form>
+      )}
+    </Formik>
   );
 }

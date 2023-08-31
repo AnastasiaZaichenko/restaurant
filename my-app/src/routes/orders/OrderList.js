@@ -8,6 +8,7 @@ import OrderItems from "./OrderItems";
 export default function OrderList() {
   const dispatch = useDispatch();
   const list = useSelector(selectCommonList);
+  console.log(list);
   const orderList = list.map((order) => (
     <OrderItems key={order.id} order={order} />
   ));

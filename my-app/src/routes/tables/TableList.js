@@ -20,7 +20,7 @@ export default function TableList() {
     <div>
       <ul>{tableList}</ul>
       <button>
-        <Link to="/table/create">Add table</Link>
+        <Link to="/table/create">Create a new table</Link>
       </button>
     </div>
   );

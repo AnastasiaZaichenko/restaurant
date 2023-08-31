@@ -1,5 +1,5 @@
 export default class DishApi {
-  static API = `https://mock-api-5678.nw.r.appspot.com/dishes/`;
+  static API = `https://64eda7071f8721827141862f.mockapi.io/api/restaurant/dish/`;
   static request(url = "", method = "GET", body) {
     return fetch(DishApi.API + url, {
       method,

@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectWaiterList } from "../../store/selectors";
 import WaiterItems from "./WaiterItems";
 import { fetchWaiterList } from "../../store/actions/waiterActions";
+import style from "./WaiterList.module.css";
 export default function WaiterList() {
   const dispatch = useDispatch();
   const list = useSelector(selectWaiterList);
@@ -16,10 +17,12 @@ export default function WaiterList() {
   }, [dispatch]);
 
   return (
-    <div>
-      <ul>{waiterList}</ul>
-      <button>
-        <Link to="/waiter/create">Add Waiter</Link>
+    <div className={style.body_box}>
+      <ul className={style.list}>{waiterList}</ul>
+      <button className={style.button_create} type="button">
+        <Link className={style.link_create_waiter} to="/waiter/create">
+          Create a new waiter
+        </Link>
       </button>
     </div>
   );

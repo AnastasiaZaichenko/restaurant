@@ -1,5 +1,5 @@
 export default class WaiterApi {
-  static API = `https://mock-api-5678.nw.r.appspot.com/waiters/`;
+  static API = `https://64eda7071f8721827141862f.mockapi.io/api/restaurant/waiter/`;
   static request(url = "", method = "GET", body) {
     return fetch(WaiterApi.API + url, {
       method,
@@ -35,6 +35,7 @@ export default class WaiterApi {
       throw new Error("Can not delete waiter from server");
     });
   }
+
   static update(id, changes) {
     return WaiterApi.request(id, "PUT", changes).catch(() => {
       throw new Error("Can not update waiter on server");

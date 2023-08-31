@@ -19,7 +19,7 @@ export default function DishList() {
       <ul>{dishList}</ul>
 
       <button>
-        <Link to="/dish/create">Add dish</Link>
+        <Link to="/dish/create">Create a new dish</Link>
       </button>
     </div>
   );
