@@ -5,6 +5,7 @@ import { DEFAULT_DISH } from "../../store/reducers/dishReducer";
 import { selectDishEdit } from "../../store/selectors";
 import { save } from "../../store/actions/dishActions";
 import { validationSchemaDish } from "../../extra/form-rules/dishRules";
+import style from "../commonStyle.module.css";
 
 export default function DishForm() {
   const dishEdit = useSelector(selectDishEdit);
@@ -38,41 +39,56 @@ export default function DishForm() {
       onSubmit={onSubmit}
     >
       {({ values, handleSubmit, handleChange, errors, touched }) => (
-        <form onSubmit={handleSubmit}>
-          <div>
-            <label htmlFor="name">Dish name :</label>
-            <input
-              id="name"
-              value={values.name}
-              type="text"
-              onChange={handleChange}
-            />
-            {errors.name && touched.name ? <span>{errors.name}</span> : null}
+        <form onSubmit={handleSubmit} className={style.form_box}>
+          <div className={style.inputs}>
+            <div className={style.form_error}>
+              <label htmlFor="name">Dish name: </label>
+              <input
+                id="name"
+                value={values.name}
+                type="text"
+                onChange={handleChange}
+                className={style.input}
+              />
+              {errors.name && touched.name ? (
+                <span className={style.form_error}>{errors.name}</span>
+              ) : null}
+            </div>
+            <div className={style.input_box}>
+              <label htmlFor="description">Dish description: </label>
+              <input
+                id="description"
+                type="text"
+                value={values.description}
+                onChange={handleChange}
+                className={style.input}
+              />
+              {errors.description && touched.description ? (
+                <span className={style.form_error}>{errors.description}</span>
+              ) : null}
+            </div>
+            <div className={style.input_box}>
+              <label htmlFor="price">Price: </label>
+              <input
+                id="price"
+                type="text"
+                value={values.price}
+                onChange={handleChange}
+                className={style.input}
+              />
+              {errors.price && touched.price ? (
+                <span className={style.form_error}>{errors.price}</span>
+              ) : null}
+            </div>
           </div>
-          <div>
-            <label htmlFor="description">Dish description:</label>
-            <input
-              id="description"
-              type="text"
-              value={values.description}
-              onChange={handleChange}
-            />
-            {errors.description && touched.description ? (
-              <span>{errors.description}</span>
-            ) : null}
+          <div className={style.buttons_box}>
+            <button type="submit" className={style.button_submit}>
+              Add a dish
+            </button>
+            <button onClick={goBackBtn} className={style.button_back}>
+              Back to previous page
+            </button>
           </div>
-          <div>
-            <label htmlFor="price">Price:</label>
-            <input
-              id="price"
-              type="text"
-              value={values.price}
-              onChange={handleChange}
-            />
-            {errors.price && touched.price ? <span>{errors.price}</span> : null}
-          </div>
-          <button type="submit">Add a dish</button>
-          <button onClick={goBackBtn}>Back to previous page</button>
         </form>
       )}
     </Formik>

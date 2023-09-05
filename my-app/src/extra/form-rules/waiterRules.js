@@ -8,7 +8,6 @@ export const validationSchemaWaiter = Yup.object({
     .matches(FIRST_NAME_TEMPLATE, "Must be <= 20 numbers")
     .required("Please fill out the form"),
   phone: Yup.string()
-    // .max(2, "Must be <= 2 numbers")
     .matches(PHONE_TEMPLATE, "Must be xxx-xxx-xxxx")
     .required("Please fill out the form"),
 });

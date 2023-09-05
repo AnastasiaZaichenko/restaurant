@@ -2,7 +2,7 @@ import { deleteWaiter, setEditWaiter } from "../../store/actions/waiterActions";
 
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import style from "./WaiterItems.module.css";
+import style from "../commonStyle.module.css";
 
 export default function WaiterItems({ waiter }) {
   const dispatch = useDispatch();

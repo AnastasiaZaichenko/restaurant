@@ -1,0 +1,294 @@
+.form_error {
+    color:rgb(220 90 52);
+    font-size: 18px;
+}
+
+.list_item {
+  display: flex;
+  align-items: center;
+  padding: 10px 60px 10px 60px;
+  gap: 20px;
+  flex-wrap: wrap;
+  border: solid #64656147 2px;
+}
+
+.body_box{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 30px 30px 30px;
+}
+
+.list {
+  list-style:none;
+  display: flex;
+  flex-direction: column;
+  border-bottom: solid #64656147 2px;
+  border-top: solid #64656147 2px;
+  border-radius: 5px;
+  padding-left: 0;
+}
+
+.capture{
+display: flex;
+gap:80px;
+padding: 10px 60px 10px 60px;
+font-weight: bold;
+border-bottom: solid #64656147 2px; 
+border-top: solid #64656147 2px; 
+}
+
+.capture_dish{
+display: flex;
+gap:98px;
+padding: 10px 60px 10px 60px;
+font-weight: bold;
+border-bottom: solid #64656147 2px; 
+border-top: solid #64656147 2px; 
+}
+
+.datas_firstname{
+  flex-grow: 15;
+}
+.datas_phone{
+  flex-grow: 0;
+  padding-right: 40px;
+}
+
+.datas_number{
+  padding-right: 40px;
+}
+
+.datas_name{
+  flex-grow: 15;
+}
+.datas_description{
+  flex-grow: 0;
+}
+.datas_price{
+  flex-grow: 0;
+  padding-right: 40px;
+}
+
+.input {
+  font-size: 18px;
+  border-color:rgb(220 90 52);
+  border-radius: 5px;
+  padding: 2px;
+  margin: 0 7px 0 5px;
+  box-shadow: 2px 2px 2px rgb(220 90 52);
+}
+
+.input:focus {
+  color: #212529;
+  background-color: #fff;
+  border-color: #bdbdbd;
+  outline: 0;
+  box-shadow: 2px 2px 2px rgba(158, 158, 158);
+}
+
+.inputs{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 30px;
+}
+
+.button_submit{
+  width: 230px;
+  height: 40px;
+  color: white;
+  background-color: rgb(129, 130, 131);
+  border-color:rgb(228 232 246);
+  border-radius: 5px;
+  padding: 10px 25px;
+  font-size: 16px;
+  box-shadow: 7px 7px 7px grey;
+}
+
+.button_submit:hover{
+  width: 230px;
+  height: 40px;
+  color: white;
+  background-color:rgb(220, 90, 52, 0.9 );
+  border-color:rgb(228 232 246);
+  border-radius: 5px;
+  padding: 10px 25px;
+  font-size: 16px;
+  box-shadow: 7px 7px 7px grey;
+  transition: 1s;
+}
+
+.button_back{
+  width: 230px;
+  height: 40px;
+  color: white;
+  background-color:   rgb(129, 130, 131);
+  border-color:rgb(228 232 246);
+  border-radius: 5px;
+  padding: 10px 25px;
+  font-size: 16px;
+  box-shadow: 7px 7px 7px grey;
+}
+
+.button_back:hover{
+  width: 230px;
+  height: 40px;
+  color: white;
+  background-color:rgb(220, 90, 52, 0.9 );
+  border-color:rgb(228 232 246);
+  border-radius: 5px;
+  padding: 10px 25px;
+  font-size: 16px;
+  box-shadow: 7px 7px 7px grey;
+  transition: 1s;
+}
+
+.button_create a {
+  text-decoration: none;
+  color: white;
+}
+
+.button_create {
+width: 230px;
+height: 40px;
+color: white;
+background-color: rgb(129, 130, 131);
+border-color:rgb(228 232 246);
+border-radius: 5px;
+padding: 10px 25px;
+font-size: 16px;
+box-shadow: 7px 7px 7px grey;
+margin: 20px;
+
+}
+
+.button_create:hover{
+width: 230px;
+height: 40px;
+color: white;
+background-color:rgb(220, 90, 52, 0.9 );
+border-color:rgb(228 232 246);
+border-radius: 5px;
+padding: 10px 25px;
+font-size: 16px;
+box-shadow: 7px 7px 7px grey;
+transition: 1s;
+}
+
+
+.button_edit{
+  width: 120px;
+  height: 28px;
+  color: white;
+  background-color:rgb(220 90 52);
+  border-color:rgb(220 90 52);
+  border-radius: 5px;
+  padding: 10px 25px;
+  font-size: 14px;
+  box-shadow: 2px 2px 2px rgb(220 90 52);
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+}
+.button_edit::before {
+  content: '';
+  position: relative;
+  top: 0;
+  left: -10px;
+  width: 15px;
+  height: 15px;
+  background: url('../extra/images/edit.png') center no-repeat;
+}
+
+.button_edit:hover{
+  color: white;
+  background-color:rgb(129, 130, 131, 0.9);
+  border-color:rgb(228 232 246);
+  border-radius: 5px;
+  padding: 10px 25px;
+  font-size: 14px;
+  box-shadow: 2px 2px 2px grey;
+  transition: 1s;
+}
+
+.button_delete {
+  width: 120px;
+  height: 28px;
+  color: white;
+  background-color:rgb(220 90 52);
+  border-color:rgb(220 90 52);
+  border-radius: 5px;
+  padding: 10px 25px;
+  font-size: 14px;
+  box-shadow: 2px 2px 2px rgb(220 90 52);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button_delete:hover{
+  color: white;
+  background-color:rgb(129, 130, 131, 0.9);
+  border-color:rgb(228 232 246);
+  border-radius: 5px;
+  padding: 10px 25px;
+  font-size: 14px;
+  box-shadow: 2px 2px 2px grey;
+  transition: 1s;
+}
+
+.button_delete::before {
+  content: '';
+  position: relative;
+  top: 0;
+  left: -10px;
+  width: 15px;
+  height: 15px;
+  background: url('../extra/images/delete.png') center no-repeat;
+}
+
+.body_box{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 30px 30px 30px;
+}
+
+.buttons_box{
+  display: flex;
+  gap:30px;
+}
+
+.datas_box {
+  display: flex;
+  flex-grow: 15;
+  gap: 50px;
+}
+
+.buttons_box_form {
+  display: flex;
+  gap: 10px;
+  margin-left: 40px;
+}
+
+.form_box{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap:30px;
+  padding: 30px;
+  
+}
+
+.input_box{
+  font-size: 20px;
+}
+
+
+
+
+
+
+
+

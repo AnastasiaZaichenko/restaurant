@@ -1,6 +1,7 @@
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { deleteDish, setEditDish } from "../../store/actions/dishActions";
+import style from "../commonStyle.module.css";
 
 export default function DishItems({ dish }) {
   const dispatch = useDispatch();
@@ -16,12 +17,20 @@ export default function DishItems({ dish }) {
     dispatch(deleteDish(dish));
   }
   return (
-    <li>
-      <span>{dish.name}</span>
-      <span>{dish.description}</span>
-      <span>{dish.price}</span>
-      <button onClick={onEditBtnClick}>Edit</button>
-      <button onClick={onDeleteBtnClick}>Delete</button>
+    <li className={style.list_item}>
+      <div className={style.datas_box}>
+        <span className={style.datas_name}>{dish.name}</span>
+        <span className={style.datas_description}>{dish.description}</span>
+        <span className={style.datas_price}>{dish.price}</span>
+      </div>
+      <div className={style.buttons_box}>
+        <button className={style.button_edit} onClick={onEditBtnClick}>
+          Edit
+        </button>
+        <button className={style.button_delete} onClick={onDeleteBtnClick}>
+          Delete
+        </button>
+      </div>
     </li>
   );
 }

@@ -4,6 +4,7 @@ import { selectDishList } from "../../store/selectors";
 import DishItems from "./DishItems";
 import { useEffect } from "react";
 import { fetchDishList } from "../../store/actions/dishActions";
+import style from "../commonStyle.module.css";
 
 export default function DishList() {
   const dispatch = useDispatch();
@@ -15,10 +16,16 @@ export default function DishList() {
   }, [dispatch]);
 
   return (
-    <div>
-      <ul>{dishList}</ul>
-
-      <button>
+    <div className={style.body_box}>
+      <ul className={style.list}>
+        <li className={style.capture_dish}>
+          <span>Meal</span>
+          <span>Description</span>
+          <span>Price</span>
+        </li>
+        {dishList}
+      </ul>
+      <button className={style.button_create}>
         <Link to="/dish/create">Create a new dish</Link>
       </button>
     </div>

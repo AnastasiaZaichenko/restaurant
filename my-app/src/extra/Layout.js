@@ -1,5 +1,6 @@
 import { Outlet, NavLink } from "react-router-dom";
-import "../style/app.css";
+import style from "./Layout.module.css";
+// import "../style/app.css";
 
 export default function Layout() {
   //   function handleClick(e) {
@@ -8,7 +9,7 @@ export default function Layout() {
   // onClick={handleClick}
   return (
     <>
-      <header>
+      <header className={style.header_box}>
         {/* <NavLink to="/order" >
           Orders
         </NavLink> */}

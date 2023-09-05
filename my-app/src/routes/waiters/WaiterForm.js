@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { DEFAULT_WAITER } from "../../store/reducers/waiterReducer";
 import { save } from "../../store/actions/waiterActions";
 import { validationSchemaWaiter } from "../../extra/form-rules/waiterRules";
-import style from "./WaiterForm.module.css";
+import style from "../commonStyle.module.css";
 
 export default function WaiterForm() {
   const waiterEdit = useSelector(selectWaiterEdit);
@@ -30,6 +30,7 @@ export default function WaiterForm() {
   function goBackBtn() {
     navigate("/waiter");
   }
+
   return (
     <Formik
       enableReinitialize
@@ -38,36 +39,42 @@ export default function WaiterForm() {
       onSubmit={onSubmit}
     >
       {({ values, handleSubmit, handleChange, errors, touched }) => (
-        <form onSubmit={handleSubmit}>
-          <div>
-            <label htmlFor="firstName">Name :</label>
+        <form onSubmit={handleSubmit} className={style.form_box}>
+          <div className={style.input_box}>
+            <label htmlFor="firstName">Name: </label>
             <input
               value={values.firstName}
               type="text"
               id="firstName"
               onChange={handleChange}
+              className={style.input}
             />
             {errors.firstName && touched.firstName ? (
-              <span>{errors.firstName}</span>
+              <span className={style.form_error}>{errors.firstName}</span>
             ) : null}
           </div>
 
-          <div>
-            <label htmlFor="phone">Phone :</label>
+          <div className={style.input_box}>
+            <label htmlFor="phone">Phone: </label>
             <input
               id="phone"
               type="text"
               value={values.phone}
               onChange={handleChange}
+              className={style.input}
             />
-            {errors.phone && touched.phone ? <span>{errors.phone}</span> : null}
+            {errors.phone && touched.phone ? (
+              <span className={style.form_error}>{errors.phone}</span>
+            ) : null}
           </div>
-          <button type="submit" className={style.button_submit}>
-            Add a waiter
-          </button>
-          <button onClick={goBackBtn} className={style.button_back}>
-            Back to previous page
-          </button>
+          <div className={style.buttons_box_form}>
+            <button type="submit" className={style.button_submit}>
+              Add a waiter
+            </button>
+            <button onClick={goBackBtn} className={style.button_back}>
+              Back to previous page
+            </button>
+          </div>
         </form>
       )}
     </Formik>
