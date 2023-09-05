@@ -6,15 +6,15 @@ import { selectOrderEdit, selectOptions } from "../../store/selectors/index";
 import OrderOptionsTable from "./OrderOptionsTable";
 import OrderOptionsWaiter from "./OrderOptionsWaiter";
 import OrderOptionsDish from "./OrderOptionsDish";
-import getDishList from "../../extra/getDishList";
-import { save } from "../../store/actions/orderActions";
+// import getDishList from "../../extra/getDishList";
+// import { save } from "../../store/actions/orderActions";
 import { fetchJointListTbWtDs } from "../../store/actions/commonActions";
 
 export default function OrderForm() {
   // const tableEdit = useSelector(selectTableEdit);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const orderEdit = useSelector(selectOrderEdit);
+  // const orderEdit = useSelector(selectOrderEdit);
   const list = useSelector(selectOptions);
   const [valueTable, setValueTable] = useState("");
   const [valueWaiter, setValueWaiter] = useState("");
